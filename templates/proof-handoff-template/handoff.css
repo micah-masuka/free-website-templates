@@ -1,0 +1,293 @@
+/* Proof Handoff — photographer delivery */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #222;
+  background: #b8b4ac;
+  background-image: radial-gradient(circle at 50% 0%, #c8c4bc 0%, #a8a49c 100%);
+  min-height: 100vh;
+}
+
+a {
+  color: #222;
+}
+
+code {
+  font-family: ui-monospace, monospace;
+  font-size: 0.9em;
+}
+
+.u-skip {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  background: #222;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-size: 14px;
+}
+
+.u-skip:focus {
+  top: 1rem;
+  z-index: 100;
+}
+
+.delivery {
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 0 1.5rem 4rem;
+  background: #e8e4dc;
+  border: 1px solid #aaa;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.delivery-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.5rem;
+  background: #222;
+  color: #f5f5f0;
+  font-family: ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+
+.delivery-ref strong {
+  color: #7cb87c;
+}
+
+.delivery-meta {
+  opacity: 0.75;
+}
+
+.letter {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.letter-from {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 1rem;
+}
+
+.letter h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.letter-date {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 1.25rem;
+}
+
+.letter p {
+  margin-bottom: 0.75rem;
+  color: #333;
+}
+
+.letter-sign {
+  margin-top: 1.5rem;
+  font-size: 14px;
+  color: #555;
+}
+
+.download-block {
+  margin-bottom: 2.5rem;
+  padding: 1.25rem;
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: inset 0 1px 0 #fff, 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.download-block h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.gate {
+  margin-top: 1rem;
+}
+
+.gate label {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 0.35rem;
+  color: #666;
+}
+
+.gate-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.gate input {
+  flex: 1;
+  min-width: 180px;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+.gate button {
+  padding: 0.5rem 1rem;
+  background: #222;
+  color: #fff;
+  border: 1px solid #222;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.gate-hint {
+  font-size: 12px;
+  color: #888;
+  margin-top: 0.5rem;
+}
+
+.gate-hint.is-error {
+  color: #a33;
+}
+
+.download-link {
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+.proof-grid {
+  margin-bottom: 2.5rem;
+}
+
+.proof-grid h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.count {
+  font-weight: 400;
+  color: #888;
+  font-size: 14px;
+}
+
+.grid-note {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.grid li img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #222;
+  margin-bottom: 0.35rem;
+  background: #111;
+  box-shadow: inset 0 0 0 2px #333;
+}
+
+.fname {
+  display: block;
+  font-family: ui-monospace, monospace;
+  font-size: 10px;
+  color: #666;
+  word-break: break-all;
+}
+
+.favourites h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.favourites > p {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.fav-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.fav-table th,
+.fav-table td {
+  padding: 0.5rem 0.5rem 0.5rem 0;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: left;
+  vertical-align: top;
+}
+
+.fav-table thead th {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #888;
+  font-weight: 500;
+}
+
+.fav-table td:first-child {
+  font-family: ui-monospace, monospace;
+  font-size: 12px;
+  color: #888;
+  width: 2.5rem;
+}
+
+.fav-reply {
+  margin-top: 1rem;
+  font-size: 14px;
+}
+
+.foot {
+  font-size: 12px;
+  color: #999;
+  padding-top: 1.5rem;
+  border-top: 1px solid #ddd;
+}
+
+@media (max-width: 480px) {
+  .fav-table thead {
+    display: none;
+  }
+
+  .fav-table tr {
+    display: block;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .fav-table td {
+    display: block;
+    border: none;
+    padding: 0.15rem 0;
+  }
+}

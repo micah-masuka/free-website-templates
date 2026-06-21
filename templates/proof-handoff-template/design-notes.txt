@@ -1,0 +1,7 @@
+Proof handoff — design notes
+
+Format: photographer client delivery — job bar, letter, proof grid, favourites table.
+Layout: delivery reference header, password gate, thumbnail grid.
+Typography: sans letter; monospace filenames.
+Interaction: static password demo in proof.js.
+Use for: wedding and portrait proof delivery per shoot.

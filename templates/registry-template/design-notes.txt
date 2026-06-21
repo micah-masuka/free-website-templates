@@ -1,0 +1,7 @@
+Elliot & Mara — registry design notes
+
+Format: wedding gift catalogue — stationery enclosure, not ecommerce grid.
+Layout: masthead, couple note, ruled catalogue rows, charity block.
+Typography: Georgia names and titles; sans descriptions.
+Interaction: margin index on desktop; text strip on mobile; print.css.
+Use for: wedding registries, planner bundles with paper invites.

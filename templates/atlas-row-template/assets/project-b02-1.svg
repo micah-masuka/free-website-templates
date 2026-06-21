@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="320" viewBox="0 0 480 320" fill="none" aria-hidden="true">
+  <rect width="480" height="320" fill="#c8ccd4"/>
+  <path d="M40 260 L120 100 L200 180 L280 80 L360 160 L440 120" stroke="#1a1a1a" stroke-width="1.5" fill="none"/>
+  <rect x="100" y="140" width="280" height="100" stroke="#1a1a1a" stroke-width="1" fill="#f0f2f5"/>
+  <text x="240" y="295" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#555">SECTION  RIVER FRONT</text>
+</svg>

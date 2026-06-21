@@ -1,0 +1,7 @@
+Weekend itinerary — design notes
+
+Format: folded train timetable with day tabs and ruled schedule tables.
+Layout: dark timetable header, three-column day tabs, time/event/location rows.
+Typography: monospace times; Georgia event names in table.
+Interaction: print.css; no shared nav with registry.
+Use for: wedding weekends, retreats, festival guest schedules.

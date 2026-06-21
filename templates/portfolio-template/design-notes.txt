@@ -1,0 +1,7 @@
+Tariro Moyo — design notes
+
+Format: editorial designer portfolio with asymmetric project spreads.
+Layout: fixed left rail, oversized name, alternating image and copy blocks.
+Typography: Georgia display, mono project index.
+Interaction: mobile Index drawer.
+Use for: designers, art directors, case-study portfolios.

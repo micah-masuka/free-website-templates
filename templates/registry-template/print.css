@@ -1,0 +1,45 @@
+/* Print — registry list for guests who prefer paper */
+
+@media print {
+  body {
+    background: #fff;
+    font-size: 11pt;
+  }
+
+  .u-skip,
+  .index-strip,
+  .index-rail,
+  .gift-action,
+  .back-link {
+    display: none !important;
+  }
+
+  .sheet {
+    margin: 0;
+    padding: 0;
+    max-width: none;
+  }
+
+  .masthead-vignette {
+    display: block;
+    position: static;
+    margin: 0 auto 1rem;
+  }
+
+  .category {
+    page-break-inside: avoid;
+  }
+
+  .enclosure details {
+    display: block;
+  }
+
+  .enclosure details p {
+    display: block !important;
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+}

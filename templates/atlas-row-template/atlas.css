@@ -1,0 +1,209 @@
+/* Atlas Row — architecture project archive */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #1a1a1a;
+  background: #e8e6e2;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 79px,
+    rgba(0, 0, 0, 0.03) 79px,
+    rgba(0, 0, 0, 0.03) 80px
+  );
+  padding: 2rem 1.5rem 4rem;
+}
+
+a {
+  color: #1a1a1a;
+}
+
+.u-skip {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  background: #1a1a1a;
+  color: #f0eeea;
+  padding: 0.5rem 1rem;
+  font-size: 14px;
+}
+
+.u-skip:focus {
+  top: 1rem;
+  z-index: 100;
+}
+
+.studio-mark {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #999;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  pointer-events: none;
+}
+
+.mast {
+  max-width: 42rem;
+  margin-bottom: 3rem;
+  padding-left: 1.25rem;
+  border-left: 4px solid #1a1a1a;
+}
+
+.mast h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  font-weight: 400;
+  margin-bottom: 0.75rem;
+}
+
+.mast-note {
+  font-size: 15px;
+  color: #555;
+  max-width: 36rem;
+}
+
+.code-index {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.5rem 2rem;
+  margin-bottom: 4rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.code-index a {
+  display: flex;
+  gap: 1rem;
+  text-decoration: none;
+  padding: 0.35rem 0;
+  color: #444;
+}
+
+.code-index a:hover {
+  color: #1a1a1a;
+  text-decoration: underline;
+}
+
+.code {
+  font-family: ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: #888;
+  min-width: 3.5rem;
+}
+
+.project-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid #ccc;
+}
+
+@media (min-width: 800px) {
+  .project-row {
+    grid-template-columns: 280px 1fr;
+    align-items: start;
+  }
+}
+
+.project-code {
+  font-family: ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: #888;
+  margin-bottom: 0.5rem;
+}
+
+.project-meta h2 {
+  font-family: Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 0.35rem;
+}
+
+.project-place {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.dims {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 13px;
+}
+
+.dims dt {
+  font-family: ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #999;
+}
+
+.dims dd {
+  font-variant-numeric: tabular-nums;
+}
+
+.project-note {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.55;
+}
+
+.project-scroll {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.5rem;
+}
+
+.project-scroll img {
+  flex: 0 0 min(85vw, 480px);
+  scroll-snap-align: start;
+  border: 1px solid #bbb;
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.project-row--text {
+  grid-template-columns: 1fr;
+  max-width: 36rem;
+}
+
+.foot {
+  font-size: 13px;
+  color: #888;
+  margin-top: 2rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

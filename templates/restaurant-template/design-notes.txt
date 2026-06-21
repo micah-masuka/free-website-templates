@@ -1,0 +1,7 @@
+Ember & Oak — design notes
+
+Format: bistro menu with cover image and dot-leader pricing.
+Layout: dark overlapping sheet, two-column menu, hours block.
+Typography: Georgia italic titles, system sans descriptions.
+Interaction: section tabs; phone reservation only.
+Use for: restaurants, cafés, wine bars.

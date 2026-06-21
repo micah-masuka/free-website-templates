@@ -1,0 +1,299 @@
+/* Weekend itinerary — folded train timetable (not registry stationery) */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: ui-monospace, "SF Mono", "Cascadia Code", monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #111;
+  background: #d4d0c8;
+  background-image:
+    linear-gradient(90deg, rgba(17, 17, 17, 0.04) 1px, transparent 1px),
+    linear-gradient(rgba(17, 17, 17, 0.04) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+a {
+  color: #1f4d3a;
+}
+
+.u-skip {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  background: #111;
+  color: #f8f6f0;
+  padding: 0.5rem 1rem;
+  font-family: system-ui, sans-serif;
+  font-size: 14px;
+}
+
+.u-skip:focus {
+  top: 1rem;
+  z-index: 100;
+}
+
+.foldout {
+  max-width: 760px;
+  margin: 2rem auto 0;
+  padding: 0 0 3rem;
+  background: #f8f6f0;
+  border: 2px solid #111;
+  box-shadow: 8px 8px 0 #111, 0 16px 48px rgba(0, 0, 0, 0.12);
+}
+
+.timetable-head {
+  padding: 1.5rem 1.25rem 1rem;
+  border-bottom: 3px double #111;
+  background: #111;
+  color: #f8f6f0;
+}
+
+.timetable-operator {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin-bottom: 0.5rem;
+}
+
+.timetable-head h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(1.25rem, 4vw, 1.625rem);
+  font-weight: 400;
+  margin-bottom: 0.35rem;
+}
+
+.timetable-head h1 span {
+  font-style: italic;
+  opacity: 0.85;
+}
+
+.timetable-meta {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.8;
+}
+
+.timetable-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-bottom: 2px solid #111;
+}
+
+.timetable-tabs .tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.65rem 0.5rem;
+  text-decoration: none;
+  color: #111;
+  border-right: 1px solid #111;
+  background: #e0dcd4;
+}
+
+.timetable-tabs .tab:last-child {
+  border-right: none;
+}
+
+.timetable-tabs .tab:hover {
+  background: #d4d0c8;
+}
+
+.timetable-tabs .tab--wedding {
+  background: #1f4d3a;
+  color: #f8f6f0;
+}
+
+.timetable-tabs .tab--wedding:hover {
+  background: #163a2c;
+}
+
+.tab-day {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+}
+
+.tab-date {
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  margin-top: 0.15rem;
+}
+
+.guest-note {
+  font-family: system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+  margin: 1.25rem;
+  padding: 0.85rem 1rem;
+  border: 1px dashed #111;
+  background: #fff;
+}
+
+.guest-note a {
+  text-decoration: underline;
+}
+
+.day-block {
+  margin: 0 1.25rem 2rem;
+  padding-top: 1rem;
+}
+
+.day-title {
+  font-family: system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  padding: 0.35rem 0.5rem;
+  background: #111;
+  color: #f8f6f0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.day-block--wedding .day-title {
+  background: #1f4d3a;
+}
+
+.day-code {
+  font-size: 10px;
+  opacity: 0.7;
+}
+
+.schedule {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #111;
+}
+
+.schedule th {
+  font-family: system-ui, sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 0.4rem 0.5rem;
+  background: #e0dcd4;
+  border-bottom: 1px solid #111;
+}
+
+.schedule td {
+  padding: 0.5rem;
+  border-bottom: 1px solid #ccc;
+  vertical-align: top;
+  font-size: 12px;
+}
+
+.schedule tr:last-child td {
+  border-bottom: none;
+}
+
+.schedule td:first-child {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  width: 4.5rem;
+  background: #f0ece4;
+  border-right: 1px solid #ccc;
+}
+
+.schedule td:nth-child(2) {
+  font-family: Georgia, serif;
+  font-size: 13px;
+}
+
+.schedule td:nth-child(3),
+.schedule td:nth-child(4) {
+  font-family: system-ui, sans-serif;
+  font-size: 12px;
+  color: #333;
+}
+
+.note-block {
+  margin: 0 1.25rem 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #111;
+  font-family: system-ui, sans-serif;
+}
+
+.note-block h2 {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.note-block p {
+  font-size: 14px;
+  margin-bottom: 0.5rem;
+  line-height: 1.55;
+}
+
+.note-block--planner {
+  border: 1px solid #111;
+  padding: 1rem;
+  background: #fff;
+}
+
+.map-figure figcaption {
+  font-size: 11px;
+  font-style: italic;
+  margin-top: 0.35rem;
+}
+
+.foot {
+  text-align: center;
+  font-family: system-ui, sans-serif;
+  font-size: 11px;
+  color: #555;
+  padding: 1rem 1.25rem;
+  border-top: 1px solid #111;
+}
+
+@media (max-width: 640px) {
+  .schedule thead {
+    display: none;
+  }
+
+  .schedule tr {
+    display: block;
+    border-bottom: 1px solid #111;
+  }
+
+  .schedule td {
+    display: block;
+    width: 100% !important;
+    border: none;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .schedule td:first-child {
+    background: #111;
+    color: #f8f6f0;
+    font-size: 13px;
+    padding: 0.35rem 0.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

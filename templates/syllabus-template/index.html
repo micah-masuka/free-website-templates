@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Frontend Systems — 8-week evening cohort syllabus. Instructor: Dana Okoro.">
+  <title>Frontend Systems — Syllabus</title>
+  <link rel="stylesheet" href="syllabus.css">
+  <link rel="stylesheet" href="print.css" media="print">
+</head>
+<body>
+  <a class="u-skip" href="#weeks">Skip to weekly outline</a>
+
+  <nav class="week-rail" aria-label="Weeks">
+    <a href="#week-1">W1</a>
+    <a href="#week-2">W2</a>
+    <a href="#week-3">W3</a>
+    <a href="#week-4">W4</a>
+    <a href="#week-5">W5</a>
+    <a href="#week-6">W6</a>
+    <a href="#week-7">W7</a>
+    <a href="#week-8">W8</a>
+  </nav>
+
+  <article class="doc">
+    <header class="mast">
+      <p class="course-code">DEV-412 · Spring 2026</p>
+      <h1>Frontend Systems</h1>
+      <p class="course-sub">HTML semantics, layout, accessibility, and maintainable CSS — for developers who ship interfaces, not tutorials.</p>
+    </header>
+
+    <table class="meta-table">
+      <tbody>
+        <tr>
+          <th scope="row">Instructor</th>
+          <td>Dana Okoro · <a href="mailto:dana@phenduka.co.zw">dana@phenduka.co.zw</a></td>
+        </tr>
+        <tr>
+          <th scope="row">Schedule</th>
+          <td>Tuesdays &amp; Thursdays, 6:30–9:00 PM · 14 April – 4 June 2026</td>
+        </tr>
+        <tr>
+          <th scope="row">Location</th>
+          <td>Phenduka School, Room 3.12 · 44 Kwame Nkrumah Avenue, Harare</td>
+        </tr>
+        <tr>
+          <th scope="row">Prerequisites</th>
+          <td>Comfort with HTML/CSS basics and Git. One shipped project (any stack).</td>
+        </tr>
+        <tr>
+          <th scope="row">Office hours</th>
+          <td>Wednesdays 5–6 PM, same room — book via calendar link in cohort Slack</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <section class="policies">
+      <h2>Policies</h2>
+      <ul>
+        <li>Two absences allowed without penalty. Notify Dana before session if you will miss.</li>
+        <li>Late work accepted up to 48 hours with a short note. After that, credit at instructor discretion.</li>
+        <li>Cohort Slack is for questions and peer review — not for sharing paid course materials outside the group.</li>
+        <li>Accessibility is graded: every assignment must include keyboard path and one screen-reader check note.</li>
+      </ul>
+    </section>
+
+    <main id="weeks">
+      <section class="week" id="week-1">
+        <p class="week-label">Week 1</p>
+        <h2>Document structure &amp; semantics</h2>
+        <p class="week-date">14–16 April</p>
+        <h3>Topics</h3>
+        <ul>
+          <li>Landmarks, headings, lists — when a <code>&lt;div&gt;</code> is wrong</li>
+          <li>Forms: labels, fieldsets, validation messages that assistive tech can find</li>
+          <li>Reading: WHATWG HTML spec (selected sections), MDN accessibility tree overview</li>
+        </ul>
+        <h3>Deliverable</h3>
+        <p>Markup audit of a provided broken page — written report + corrected HTML (due 20 April).</p>
+      </section>
+
+      <section class="week" id="week-2">
+        <p class="week-label">Week 2</p>
+        <h2>Layout without frameworks</h2>
+        <p class="week-date">21–23 April</p>
+        <h3>Topics</h3>
+        <ul>
+          <li>Flexbox for components; grid for page regions</li>
+          <li>Intrinsic sizing, <code>min()</code>, container queries intro</li>
+          <li>Exercise: rebuild a three-region dashboard shell from a Figma PDF</li>
+        </ul>
+        <h3>Deliverable</h3>
+        <p>Responsive article layout — no Bootstrap, no Tailwind (due 27 April).</p>
+      </section>
+
+      <section class="week" id="week-3">
+        <p class="week-label">Week 3</p>
+        <h2>CSS architecture</h2>
+        <p class="week-date">28–30 April</p>
+        <h3>Topics</h3>
+        <ul>
+          <li>Specificity, layers, and when BEM still helps</li>
+          <li>Design tokens without a 400-variable system</li>
+          <li>Refactoring a 1,200-line stylesheet in pairs</li>
+        </ul>
+        <h3>Deliverable</h3>
+        <p>CSS refactor proposal for last week&apos;s layout — before/after diff (due 4 May).</p>
+      </section>
+
+      <section class="week" id="week-4">
+        <p class="week-label">Week 4</p>
+        <h2>Accessibility in practice</h2>
+        <p class="week-date">5–7 May</p>
+        <h3>Topics</h3>
+        <ul>
+          <li>WCAG 2.2 AA — focus order, contrast, motion preferences</li>
+          <li>Live testing with VoiceOver and NVDA (lab machines provided)</li>
+          <li>Guest: Miriam Chen, Ministry of Health digital accessibility lead (Thursday)</li>
+        </ul>
+        <h3>Deliverable</h3>
+        <p>Accessibility report on a cohort peer&apos;s Week 2 submission (due 11 May).</p>
+      </section>
+
+      <section class="week" id="week-5">
+        <p class="week-label">Week 5</p>
+        <h2>Performance &amp; perceived speed</h2>
+        <p class="week-date">12–14 May</p>
+        <h3>Topics</h3>
+        <ul>
+          <li>Critical path, font loading, image formats</li>
+          <li>Lighthouse without gaming the score</li>
+          <li>Case: slow council planning portal — real trace review (Harare CBD)</li>
+        </ul>
+        <h3>Deliverable</h3>
+        <p>Performance memo — three fixes with estimated impact (due 18 May).</p>
+      </section>
+
+      <section class="week" id="week-6">
+        <p class="week-label">Week 6</p>
+        <h2>Components &amp; progressive enhancement</h2>
+        <p class="week-date">19–21 May</p>
+        <h3>Topics</h3>
+        <ul>
+          <li>Dialogs, tabs, disclosures — native first</li>
+          <li>When to add JavaScript and how to keep no-JS fallbacks</li>
+          <li>Build a filterable table that works without JS</li>
+        </ul>
+        <h3>Deliverable</h3>
+        <p>Accessible component pair — enhanced and baseline versions (due 25 May).</p>
+      </section>
+
+      <section class="week" id="week-7">
+        <p class="week-label">Week 7</p>
+        <h2>Integration week</h2>
+        <p class="week-date">26–28 May</p>
+        <h3>Topics</h3>
+        <ul>
+          <li>Working with design files and handoff friction</li>
+          <li>Code review workshop — cohort reviews in groups of three</li>
+          <li>Capstone project kickoff</li>
+        </ul>
+        <h3>Deliverable</h3>
+        <p>Capstone proposal — one page, scope and accessibility goals (due 28 May).</p>
+      </section>
+
+      <section class="week" id="week-8">
+        <p class="week-label">Week 8</p>
+        <h2>Capstone presentations</h2>
+        <p class="week-date">2–4 June</p>
+        <h3>Topics</h3>
+        <ul>
+          <li>10-minute demos + 5-minute Q&amp;A each</li>
+          <li>Peer feedback forms</li>
+          <li>Course retrospective</li>
+        </ul>
+        <h3>Deliverable</h3>
+        <p>Capstone site — deployed static URL, README with a11y notes (due 4 June, 5 PM).</p>
+      </section>
+    </main>
+
+    <section class="materials" id="materials">
+      <h2>Materials</h2>
+      <ul>
+        <li>Laptop with Node 20+ and Git installed</li>
+        <li>Phenduka Slack invite (sent first week)</li>
+        <li>Optional: <em>Resilient Web Design</em> (Clarke) — free online</li>
+        <li>Browser: latest Firefox or Chrome; Safari for a11y lab day</li>
+      </ul>
+    </section>
+
+    <footer class="foot">
+      <p>Phenduka School · <a href="mailto:hello@phenduka.co.zw">hello@phenduka.co.zw</a></p>
+      <p>&copy; 2026 Phenduka School · Harare, Zimbabwe</p>
+    </footer>
+  </article>
+</body>
+</html>

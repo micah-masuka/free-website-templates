@@ -1,0 +1,7 @@
+RSVP only — design notes
+
+Format: tear-off reply slip from a wedding invitation envelope.
+Layout: single slip with stamp, ruled fields, outline submit control.
+Typography: Times body; system-ui labels.
+Interaction: mailto fallback via reply.js; print.css.
+Use for: standalone RSVP links alongside a main wedding site.

@@ -1,0 +1,32 @@
+@media print {
+  body {
+    background: #fff;
+    font-size: 9pt;
+  }
+
+  .u-skip,
+  .timetable-tabs {
+    display: none !important;
+  }
+
+  .foldout {
+    margin: 0;
+    border: none;
+    box-shadow: none;
+  }
+
+  .timetable-head {
+    background: #fff;
+    color: #000;
+    border-bottom: 2px solid #000;
+  }
+
+  .day-block {
+    page-break-inside: avoid;
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+}

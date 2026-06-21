@@ -1,0 +1,7 @@
+Riverside Fellowship — design notes
+
+Format: community church bulletin with pin note and event timeline.
+Layout: polaroid hero, full-width colour bands, visit card.
+Typography: Verdana body, Georgia headings.
+Interaction: banner menu sheet on mobile.
+Use for: neighbourhood churches, community gatherings.

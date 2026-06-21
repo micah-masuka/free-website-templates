@@ -1,0 +1,7 @@
+Vantage Strategic Advisors — design notes
+
+Format: institutional consulting memorandum with table of contents.
+Layout: narrow reading column, numbered practice index, inquiry form.
+Typography: Georgia body, small-caps headings, restrained scale.
+Interaction: desktop TOC sidebar; mobile menu for section jumps.
+Use for: advisory firms, restructuring practices, board-facing sites.

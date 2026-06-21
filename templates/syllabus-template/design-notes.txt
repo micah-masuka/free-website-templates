@@ -1,0 +1,7 @@
+Syllabus — design notes
+
+Format: university or bootcamp course syllabus.
+Layout: meta table, policies box, week-by-week sections, materials list.
+Typography: 17px sans body; mono week labels; Georgia title.
+Interaction: week rail on desktop (right side); print.css.
+Use for: courses, workshops, evening cohorts.

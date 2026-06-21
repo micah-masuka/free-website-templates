@@ -1,0 +1,272 @@
+/* Syllabus — course document */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 17px;
+  line-height: 1.55;
+  color: #1a1a1a;
+  background: #e8e6e0;
+  background-image: repeating-linear-gradient(
+    180deg,
+    transparent,
+    transparent 31px,
+    rgba(107, 45, 60, 0.06) 31px,
+    rgba(107, 45, 60, 0.06) 32px
+  );
+}
+
+a {
+  color: #6b2d3c;
+}
+
+code {
+  font-family: ui-monospace, monospace;
+  font-size: 0.88em;
+  background: #ebe8e2;
+  padding: 0.1em 0.35em;
+}
+
+.u-skip {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  background: #1a1a1a;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-size: 14px;
+}
+
+.u-skip:focus {
+  top: 1rem;
+  z-index: 100;
+}
+
+.week-rail {
+  display: none;
+  position: fixed;
+  right: max(1rem, calc(50% - 420px));
+  top: 2rem;
+  font-family: ui-monospace, monospace;
+  font-size: 10px;
+  text-align: right;
+}
+
+.week-rail a {
+  display: block;
+  text-decoration: none;
+  color: #999;
+  margin-bottom: 0.35rem;
+  padding-right: 0.5rem;
+  border-right: 2px solid transparent;
+}
+
+.week-rail a:hover {
+  color: #6b2d3c;
+  border-right-color: #6b2d3c;
+}
+
+.doc {
+  max-width: 680px;
+  margin: 2rem auto;
+  padding: 2.5rem 1.5rem 4rem;
+  background: #fff;
+  border: 1px solid #d8d4cc;
+  box-shadow: 0 8px 32px rgba(26, 26, 26, 0.08), 4px 0 0 #6b2d3c inset;
+}
+
+@media (min-width: 960px) {
+  .week-rail {
+    display: block;
+  }
+
+  .doc {
+    margin-right: calc(50% - 360px + 2.5rem);
+  }
+}
+
+.mast {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #1a1a1a;
+}
+
+.course-code {
+  font-family: ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: #666;
+  margin-bottom: 0.75rem;
+}
+
+.mast h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(1.75rem, 5vw, 2.25rem);
+  font-weight: 400;
+  margin-bottom: 0.75rem;
+}
+
+.course-sub {
+  font-size: 16px;
+  color: #444;
+  max-width: 36rem;
+}
+
+.meta-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  margin-bottom: 2rem;
+}
+
+.meta-table th {
+  text-align: left;
+  font-weight: 500;
+  padding: 0.5rem 1rem 0.5rem 0;
+  vertical-align: top;
+  width: 32%;
+  color: #555;
+}
+
+.meta-table td {
+  padding: 0.5rem 0;
+  vertical-align: top;
+  color: #333;
+}
+
+.policies {
+  margin-bottom: 2.5rem;
+  padding: 1.25rem;
+  background: #f9f8f5;
+  border: 1px solid #e0ddd6;
+}
+
+.policies h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.policies ul {
+  padding-left: 1.25rem;
+  font-size: 15px;
+  color: #444;
+}
+
+.policies li {
+  margin-bottom: 0.4rem;
+}
+
+.week {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e0ddd6;
+}
+
+.week-label {
+  font-family: ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6b2d3c;
+  margin-bottom: 0.35rem;
+  padding: 0.2rem 0.5rem;
+  background: #f0e8ea;
+  display: inline-block;
+}
+
+.week h2 {
+  font-family: Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 0.25rem;
+}
+
+.week-date {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 1rem;
+}
+
+.week h3 {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #666;
+  margin: 1rem 0 0.5rem;
+}
+
+.week ul {
+  padding-left: 1.25rem;
+  font-size: 15px;
+  color: #333;
+}
+
+.week li {
+  margin-bottom: 0.35rem;
+}
+
+.week > p {
+  font-size: 15px;
+  color: #444;
+}
+
+.materials {
+  margin-top: 2rem;
+}
+
+.materials h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.materials ul {
+  padding-left: 1.25rem;
+  font-size: 15px;
+  color: #444;
+}
+
+.materials li {
+  margin-bottom: 0.35rem;
+}
+
+.foot {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e0ddd6;
+  font-size: 14px;
+  color: #888;
+}
+
+@media (max-width: 600px) {
+  .meta-table th,
+  .meta-table td {
+    display: block;
+    width: 100%;
+    padding: 0.25rem 0;
+  }
+
+  .meta-table tr {
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

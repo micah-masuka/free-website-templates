@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="200" viewBox="0 0 320 200" fill="none" aria-hidden="true">
+  <rect x="1" y="1" width="318" height="198" stroke="#ccc4b8" stroke-width="1" fill="#f7f3ed"/>
+  <path d="M40 160 L80 120 L120 140 L160 90 L200 110 L240 70 L280 100" stroke="#8a8078" stroke-width="1.5" fill="none"/>
+  <circle cx="80" cy="120" r="4" fill="#6b7b6e"/>
+  <circle cx="160" cy="90" r="5" fill="#8b3a3a"/>
+  <circle cx="240" cy="70" r="4" fill="#6b7b6e"/>
+  <text x="155" y="85" font-family="system-ui,sans-serif" font-size="9" fill="#6b6560">All Saints</text>
+  <text x="70" y="115" font-family="system-ui,sans-serif" font-size="8" fill="#9a9088">Meikles</text>
+  <text x="220" y="65" font-family="system-ui,sans-serif" font-size="8" fill="#9a9088">Celebration Ctr</text>
+</svg>

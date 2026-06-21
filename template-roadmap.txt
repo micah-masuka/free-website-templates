@@ -1,0 +1,43 @@
+Template pack — status
+Updated June 2026
+
+════════════════════════════════════════════════════════
+Included in this release (12)
+════════════════════════════════════════════════════════
+
+business-template       Vantage Strategic Advisors — consulting memo
+portfolio-template      Tariro Moyo — editorial portfolio
+church-template         Riverside Fellowship — community bulletin
+landing-page-template   Relay — product waitlist letter
+restaurant-template     Ember & Oak — bistro menu
+registry-template       Elliot & Mara — wedding gift catalogue
+weekend-itinerary       Wedding weekend timetable (pairs with registry)
+rsvp-only               Wedding reply card (pairs with registry)
+listing-sheet-template  Mufaro Properties — property particulars
+atlas-row-template      Mhuri Architecture — project archive
+proof-handoff-template  Linden Photography — client proof delivery
+syllabus-template       Phenduka School — course syllabus
+
+Wedding pack note:
+Registry, Weekend Itinerary, and RSVP Only share sample copy (Elliot & Mara)
+but use different layouts — catalogue, timetable, and reply slip.
+
+Sample copy defaults to Zimbabwean places, +263 phone numbers, and US$ where
+prices appear.
+
+════════════════════════════════════════════════════════
+Planned
+════════════════════════════════════════════════════════
+
+Dental / clinic new-patient onboarding
+Writer archive (essay index homepage)
+Advocacy campaign scroll
+Boutique hotel guest book
+Trades field log / job ticket
+
+════════════════════════════════════════════════════════
+Under consideration
+════════════════════════════════════════════════════════
+
+Therapist intake forms · Grant proposal · Baby shower registry
+Neighbourhood guide · Tax checklist · Musician press kit

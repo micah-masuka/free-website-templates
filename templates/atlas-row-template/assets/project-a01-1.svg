@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="320" viewBox="0 0 480 320" fill="none" aria-hidden="true">
+  <rect width="480" height="320" fill="#e8e6e1"/>
+  <rect x="20" y="40" width="200" height="240" stroke="#1a1a1a" stroke-width="1.5" fill="#f5f4f0"/>
+  <rect x="240" y="80" width="220" height="160" stroke="#1a1a1a" stroke-width="1" fill="#fff"/>
+  <line x1="20" y1="200" x2="220" y2="200" stroke="#1a1a1a" stroke-width="1"/>
+  <line x1="120" y1="40" x2="120" y2="280" stroke="#1a1a1a" stroke-width="1"/>
+  <text x="240" y="30" font-family="ui-monospace,monospace" font-size="9" fill="#888">SITE PLAN</text>
+</svg>

@@ -1,0 +1,239 @@
+/* RSVP — tear-off reply slip (not registry catalogue) */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 15px;
+  line-height: 1.45;
+  color: #2a2420;
+  background: #a89888;
+  background-image: radial-gradient(ellipse at 50% 30%, #b8a898 0%, #8a7a68 100%);
+  min-height: 100vh;
+  padding: 2.5rem 1rem;
+}
+
+a {
+  color: #5c4030;
+}
+
+.envelope {
+  max-width: 440px;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 1.5rem;
+}
+
+.envelope::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 5%;
+  right: 5%;
+  height: 1.5rem;
+  background: linear-gradient(180deg, #d4c8b8 0%, #c4b8a8 100%);
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
+  opacity: 0.7;
+}
+
+.envelope-to {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #4a4038;
+  margin-bottom: 0.75rem;
+}
+
+.reply-slip {
+  position: relative;
+  background: #f5f0e6;
+  border: 1px solid #8a7a68;
+  padding: 2rem 1.75rem 1.5rem;
+  box-shadow:
+    0 1px 0 #fff inset,
+    0 4px 12px rgba(0, 0, 0, 0.15),
+    0 12px 32px rgba(42, 36, 32, 0.12);
+}
+
+.slip-stamp {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid #8b5a4a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: system-ui, sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #8b5a4a;
+  transform: rotate(-12deg);
+  opacity: 0.85;
+}
+
+.slip-head {
+  text-align: center;
+  padding-right: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.slip-head h1 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  margin-bottom: 0.35rem;
+}
+
+.slip-head h1 span {
+  font-style: italic;
+}
+
+.slip-deadline {
+  font-family: system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  font-variant-numeric: tabular-nums;
+  color: #6b5c50;
+}
+
+.reply-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.field-group {
+  border: none;
+}
+
+.field-group legend,
+.field-label {
+  display: block;
+  font-family: system-ui, sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6b5c50;
+  margin-bottom: 0.35rem;
+}
+
+.choice {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  font-family: system-ui, sans-serif;
+  font-size: 14px;
+  margin-bottom: 0.3rem;
+  cursor: pointer;
+}
+
+.choice input {
+  margin-top: 0.15rem;
+  accent-color: #8b5a4a;
+}
+
+.field--ruled input,
+.field--ruled select,
+.field--ruled textarea {
+  width: 100%;
+  font-family: inherit;
+  font-size: 15px;
+  padding: 0.35rem 0;
+  border: none;
+  border-bottom: 1px solid #2a2420;
+  background: transparent;
+  color: #2a2420;
+  border-radius: 0;
+}
+
+.field--ruled select {
+  cursor: pointer;
+}
+
+.field--ruled textarea {
+  resize: vertical;
+  min-height: 2.5rem;
+}
+
+.field--ruled input:focus,
+.field--ruled select:focus,
+.field--ruled textarea:focus {
+  outline: none;
+  border-bottom-width: 2px;
+  border-color: #8b5a4a;
+}
+
+.form-actions button {
+  margin-top: 0.5rem;
+  width: 100%;
+  font-family: system-ui, sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.6rem 1rem;
+  background: transparent;
+  color: #2a2420;
+  border: 1px solid #2a2420;
+  cursor: pointer;
+}
+
+.form-actions button:hover {
+  background: #2a2420;
+  color: #f5f0e6;
+}
+
+.slip-fallback {
+  margin-top: 1.25rem;
+  padding-top: 0.75rem;
+  border-top: 1px dotted #8a7a68;
+  font-family: system-ui, sans-serif;
+  font-size: 11px;
+  color: #6b5c50;
+  line-height: 1.5;
+}
+
+.slip-fallback a {
+  text-decoration: underline;
+}
+
+.slip-copy {
+  margin-top: 0.75rem;
+  font-family: system-ui, sans-serif;
+  font-size: 10px;
+  color: #9a8a78;
+  text-align: center;
+}
+
+.perforation {
+  height: 1rem;
+  margin-top: 0.5rem;
+  border-top: 2px dashed #8a7a68;
+  opacity: 0.6;
+}
+
+@media (max-width: 400px) {
+  .reply-slip {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .slip-head {
+    padding-right: 0;
+    padding-top: 2.5rem;
+  }
+
+  .slip-stamp {
+    top: 0.75rem;
+    right: 50%;
+    transform: translateX(50%) rotate(-8deg);
+  }
+}

@@ -1,0 +1,270 @@
+/* Editorial portfolio — left rail, alternating project bleed */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background: #ddd9d0;
+  background-image:
+    linear-gradient(90deg, rgba(17, 17, 17, 0.04) 1px, transparent 1px),
+    linear-gradient(rgba(17, 17, 17, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  color: #111;
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+}
+
+.u-skip {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  background: #111;
+  color: #eceae4;
+  padding: 0.5rem;
+}
+
+.u-skip:focus {
+  top: 1rem;
+  z-index: 200;
+}
+
+.rail {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+  align-items: center;
+  border-right: 1px solid #bbb;
+  background: linear-gradient(180deg, #e4e2dc 0%, #eceae4 40%, #eceae4 100%);
+  z-index: 50;
+}
+
+.rail-mark {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+  font-family: ui-monospace, "Cascadia Code", monospace;
+}
+
+.rail-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: ui-monospace, monospace;
+}
+
+.rail-links a {
+  text-decoration: none;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.rail-links a:hover {
+  text-decoration: underline;
+}
+
+.rail-toggle {
+  display: none;
+}
+
+.sheet {
+  margin-left: 4.5rem;
+  background: #f7f5f0;
+  min-height: 100vh;
+  box-shadow: -8px 0 24px rgba(0, 0, 0, 0.06);
+}
+
+.mast {
+  padding: 18vh 8vw 12vh 6vw;
+}
+
+.mast-name {
+  font-size: clamp(4rem, 14vw, 10rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 0.88;
+  letter-spacing: -0.03em;
+}
+
+.mast-note {
+  margin-top: 2rem;
+  max-width: 22ch;
+  font-size: 15px;
+  font-family: ui-monospace, monospace;
+  color: #555;
+}
+
+.projects {
+  padding-bottom: 10vh;
+}
+
+.project {
+  display: grid;
+  gap: 2rem;
+  padding: 8vh 6vw;
+  align-items: center;
+}
+
+.project--a {
+  grid-template-columns: 1.1fr 0.9fr;
+  background: #f7f5f0;
+}
+
+.project--b {
+  grid-template-columns: 0.85fr 1.15fr;
+  background: #f0ede6;
+}
+
+.project--c {
+  grid-template-columns: 0.6fr 1fr;
+  padding-top: 4vh;
+  background: #f7f5f0;
+}
+
+.frame {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 200px;
+  border: 2px solid #111;
+  object-fit: cover;
+  box-shadow: 6px 6px 0 rgba(17, 17, 17, 0.12);
+}
+
+.project-index {
+  font-family: ui-monospace, monospace;
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 0.75rem;
+}
+
+.project h2 {
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 400;
+  font-style: italic;
+  margin-bottom: 0.35rem;
+}
+
+.project-type {
+  font-family: ui-monospace, monospace;
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 1.25rem;
+}
+
+.project-text p:last-child {
+  font-size: 17px;
+  max-width: 38ch;
+  color: #333;
+}
+
+.info {
+  padding: 6vh 6vw 8vh;
+  border-top: 1px solid #111;
+  font-size: 18px;
+  max-width: 36rem;
+}
+
+.info-contact {
+  margin-top: 2rem;
+  font-family: ui-monospace, monospace;
+  font-size: 14px;
+}
+
+.foot {
+  padding: 1.5rem 6vw;
+  font-family: ui-monospace, monospace;
+  font-size: 11px;
+  color: #888;
+}
+
+@media (max-width: 900px) {
+  .rail {
+    display: none;
+  }
+
+  .rail-toggle {
+    display: block;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 60;
+    font-family: ui-monospace, monospace;
+    font-size: 12px;
+    padding: 0.75rem 1rem;
+    background: #111;
+    color: #f7f5f0;
+    border: none;
+    cursor: pointer;
+  }
+
+  .rail-drawer {
+    position: fixed;
+    bottom: 3.75rem;
+    right: 1rem;
+    z-index: 60;
+    background: #111;
+    padding: 1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .rail-drawer a {
+    color: #f7f5f0;
+    font-family: ui-monospace, monospace;
+    font-size: 13px;
+    text-decoration: none;
+  }
+
+  .rail-drawer.is-open {
+    display: flex;
+  }
+
+  .sheet {
+    margin-left: 0;
+  }
+
+  .project--a,
+  .project--b,
+  .project--c {
+    grid-template-columns: 1fr;
+  }
+
+  .mast {
+    padding: 12vh 1.5rem 8vh;
+  }
+
+  .project {
+    padding: 6vh 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

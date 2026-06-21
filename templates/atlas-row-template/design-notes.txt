@@ -1,0 +1,7 @@
+Atlas Row — design notes
+
+Format: architecture studio project archive with coded index.
+Layout: code grid, horizontal scroll strips per project, mono dimensions.
+Typography: tracked caps codes; Georgia titles.
+Interaction: scroll-snap project rows; fixed studio watermark.
+Use for: architecture, landscape, design-led build practices.

@@ -1,0 +1,7 @@
+Listing sheet — design notes
+
+Format: estate agent property particulars.
+Layout: agent sidebar, stats strip, vertical drawings, room table.
+Typography: Georgia address and price; sans body and stats.
+Interaction: numbered section jump links; mailto viewing request.
+Use for: residential sales, lettings, auction particulars.

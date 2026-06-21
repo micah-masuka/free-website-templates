@@ -1,0 +1,688 @@
+/* Wedding registry — stationery catalogue */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  line-height: 1.65;
+  color: #2c2824;
+  background: #e8e0d4;
+  background-image: radial-gradient(circle at 20% 30%, rgba(139, 58, 58, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(107, 123, 110, 0.08) 0%, transparent 45%);
+}
+
+a {
+  color: #2c2824;
+}
+
+.u-skip {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  background: #2c2824;
+  color: #f7f3ed;
+  padding: 0.5rem 1rem;
+  font-family: system-ui, sans-serif;
+  font-size: 14px;
+}
+
+.u-skip:focus {
+  top: 1rem;
+  z-index: 100;
+}
+
+.sheet {
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 2.5rem 1.5rem 4rem;
+  background: #faf6f0;
+  border: 1px solid #d4cdc2;
+  box-shadow: 0 8px 32px rgba(44, 40, 36, 0.1), 0 2px 0 #fff inset;
+}
+
+@media (min-width: 900px) {
+  .sheet {
+    margin-left: calc(50% - 360px + 5rem);
+    padding-left: 2rem;
+    padding-right: 3rem;
+  }
+
+  .index-rail {
+    display: block;
+  }
+}
+
+/* —— Masthead —— */
+
+.masthead {
+  text-align: center;
+  padding: 2rem 1.5rem 2rem;
+  border: 1px solid #d4cdc2;
+  border-bottom: 2px solid #8b3a3a;
+  margin-bottom: 2.5rem;
+  position: relative;
+  background: linear-gradient(180deg, #fff 0%, #f7f3ed 100%);
+}
+
+.masthead::before,
+.masthead::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 1px;
+  background: #ccc4b8;
+}
+
+.masthead::before {
+  bottom: -6px;
+  width: 60%;
+}
+
+.masthead::after {
+  bottom: -10px;
+  width: 40%;
+}
+
+.masthead-monogram {
+  margin: 0 auto 1.25rem;
+}
+
+.masthead-names {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+}
+
+.masthead-names span {
+  font-style: italic;
+  font-size: 0.85em;
+  color: #5c534a;
+}
+
+.masthead-date {
+  font-family: system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+  color: #6b6560;
+}
+
+.masthead-vignette {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 140px;
+  height: auto;
+  display: none;
+  opacity: 0.9;
+}
+
+@media (min-width: 600px) {
+  .masthead-vignette {
+    display: block;
+  }
+}
+
+/* —— Mobile index strip —— */
+
+.index-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem 0.75rem;
+  font-family: system-ui, sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding-bottom: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #ddd6c8;
+}
+
+.index-strip a {
+  text-decoration: none;
+  color: #6b6560;
+}
+
+.index-strip a:hover {
+  color: #2c2824;
+  text-decoration: underline;
+}
+
+.index-strip .is-current {
+  color: #2c2824;
+  font-weight: 600;
+}
+
+.index-strip span {
+  color: #ccc4b8;
+}
+
+/* —— Desktop margin index —— */
+
+.index-rail {
+  display: none;
+  position: fixed;
+  left: max(1rem, calc(50% - 360px - 8rem));
+  top: 3rem;
+  width: 5rem;
+  font-family: system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.index-rail ul {
+  list-style: none;
+}
+
+.index-rail li {
+  margin-bottom: 0.75rem;
+}
+
+.index-rail a {
+  text-decoration: none;
+  color: #9a9088;
+}
+
+.index-rail a:hover,
+.index-rail a.is-current {
+  color: #2c2824;
+}
+
+.index-rail a.is-current {
+  border-left: 2px dotted #8b3a3a;
+  padding-left: 0.5rem;
+  margin-left: -0.65rem;
+  color: #8b3a3a;
+}
+
+/* —— Couple note —— */
+
+.couple-note {
+  max-width: 32rem;
+  margin: 0 auto 3rem;
+  font-size: 17px;
+  color: #3d3630;
+  padding: 1.25rem 1.5rem;
+  background: #fff;
+  border: 1px solid #ddd6c8;
+  border-left: 3px solid #8b3a3a;
+  box-shadow: 0 4px 16px rgba(44, 40, 36, 0.06);
+}
+
+.couple-note p {
+  margin-bottom: 1rem;
+}
+
+.couple-sign {
+  margin-top: 1.5rem;
+  font-style: italic;
+  color: #5c534a;
+}
+
+/* —— Categories —— */
+
+.category {
+  margin-bottom: 3.5rem;
+  padding-top: 0.5rem;
+}
+
+.category-title {
+  font-size: 1.25rem;
+  font-style: italic;
+  font-weight: 400;
+  color: #2c2824;
+  margin-bottom: 0.35rem;
+}
+
+.category-label {
+  font-family: system-ui, sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #6b7b6e;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+/* Catalogue rows (Home) */
+
+.catalogue-row {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.5rem;
+  padding: 0.85rem 0.5rem;
+  margin: 0 -0.5rem;
+  border-bottom: 1px dotted #ccc4b8;
+  transition: background 0.15s ease;
+}
+
+.catalogue-row:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.catalogue-row.is-reserved .gift-name {
+  text-decoration: line-through;
+  color: #9a9088;
+}
+
+.gift-name {
+  font-size: 1rem;
+  flex-shrink: 0;
+  max-width: 55%;
+}
+
+.gift-leader {
+  flex: 1;
+  min-width: 2rem;
+  border-bottom: 1px dotted #bbb4a8;
+  margin-bottom: 0.2rem;
+}
+
+.gift-action {
+  font-family: system-ui, sans-serif;
+  font-size: 13px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.gift-action:hover {
+  text-decoration: underline;
+}
+
+.gift-desc {
+  width: 100%;
+  font-family: system-ui, sans-serif;
+  font-size: 14px;
+  color: #6b6560;
+  margin-top: 0.15rem;
+  padding-left: 0.15rem;
+}
+
+.reserved-tag {
+  font-family: system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #9a9088;
+  margin-left: 0.5rem;
+}
+
+/* Featured frame (Kitchen) */
+
+.featured-gift {
+  border: 1px solid #ccc4b8;
+  background: #fff;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 12px rgba(44, 40, 36, 0.06);
+}
+
+.category:nth-child(even) {
+  padding: 0 0.5rem;
+}
+
+.featured-gift-image {
+  aspect-ratio: 5 / 3;
+  background: #f0ebe3;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e0d8cc;
+}
+
+.featured-gift-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 1rem;
+}
+
+.catalogue-row--with-thumb {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 0 1rem;
+  align-items: start;
+}
+
+.catalogue-row--with-thumb .row-thumb {
+  grid-row: 1 / 4;
+  padding-top: 0.5rem;
+}
+
+.catalogue-row--with-thumb .gift-name,
+.catalogue-row--with-thumb .gift-leader,
+.catalogue-row--with-thumb .gift-action,
+.catalogue-row--with-thumb .gift-desc {
+  grid-column: 2;
+}
+
+.catalogue-row--with-thumb .gift-leader {
+  display: none;
+}
+
+.catalogue-row--with-thumb .gift-name {
+  max-width: none;
+}
+
+.row-thumb img {
+  opacity: 0.85;
+}
+
+.featured-gift-image--compact {
+  aspect-ratio: 2 / 1;
+  max-height: 140px;
+}
+
+.featured-gift h3 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.featured-gift p {
+  font-family: system-ui, sans-serif;
+  font-size: 14px;
+  color: #5c534a;
+  margin-bottom: 1rem;
+}
+
+/* Numbered experiences */
+
+.numbered-list {
+  list-style: none;
+}
+
+.numbered-list li {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr auto;
+  gap: 0.75rem 1rem;
+  align-items: baseline;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e0d8cc;
+}
+
+.numbered-list .num {
+  font-family: system-ui, sans-serif;
+  font-size: 12px;
+  color: #9a9088;
+  font-variant-numeric: tabular-nums;
+}
+
+.numbered-list h3 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.numbered-list p {
+  grid-column: 2;
+  font-family: system-ui, sans-serif;
+  font-size: 14px;
+  color: #6b6560;
+}
+
+.numbered-list .amount {
+  font-variant-numeric: tabular-nums;
+  font-size: 14px;
+  color: #5c534a;
+}
+
+/* Honeymoon fund letter */
+
+.fund-letter {
+  background: #fff;
+  border: 1px solid #ddd6c8;
+  padding: 1.75rem;
+  font-size: 16px;
+  color: #3d3630;
+}
+
+.fund-letter p {
+  margin-bottom: 1rem;
+}
+
+.fund-tiers {
+  list-style: none;
+  margin: 1.25rem 0;
+  font-family: system-ui, sans-serif;
+  font-size: 14px;
+}
+
+.fund-tiers li {
+  padding: 0.4rem 0;
+  border-bottom: 1px dotted #e0d8cc;
+  display: flex;
+  justify-content: space-between;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Charity prose */
+
+.charity-block {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 560px) {
+  .charity-block {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .charity-block .charity-item:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: 50%;
+  }
+}
+
+.charity-item h3 {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.charity-item p {
+  font-family: system-ui, sans-serif;
+  font-size: 14px;
+  color: #5c534a;
+  margin-bottom: 0.75rem;
+}
+
+.charity-item a {
+  font-family: system-ui, sans-serif;
+  font-size: 13px;
+}
+
+/* Enclosure card */
+
+.enclosure {
+  background: #fff;
+  border: 1px solid #ccc4b8;
+  padding: 2rem;
+  margin-top: 3rem;
+  max-width: 32rem;
+  margin-inline: auto;
+}
+
+.enclosure h2 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.enclosure p {
+  font-family: system-ui, sans-serif;
+  font-size: 14px;
+  color: #5c534a;
+  margin-bottom: 0.75rem;
+}
+
+.enclosure details {
+  margin-top: 1.25rem;
+  font-family: system-ui, sans-serif;
+  font-size: 14px;
+}
+
+.enclosure summary {
+  cursor: pointer;
+  color: #2c2824;
+  font-weight: 500;
+}
+
+.enclosure details p {
+  margin-top: 0.75rem;
+}
+
+/* Footer */
+
+.colophon {
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #ddd6c8;
+  font-family: system-ui, sans-serif;
+  font-size: 12px;
+  color: #9a9088;
+}
+
+/* Details page specifics */
+
+.details-mast {
+  margin-bottom: 2.5rem;
+}
+
+.details-mast h1 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.details-mast p {
+  font-family: system-ui, sans-serif;
+  font-size: 14px;
+  color: #6b6560;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  margin-bottom: 2.5rem;
+}
+
+.schedule-table th,
+.schedule-table td {
+  text-align: left;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid #e0d8cc;
+  vertical-align: top;
+}
+
+.schedule-table th {
+  font-family: system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #6b6560;
+  width: 28%;
+}
+
+.schedule-table td {
+  color: #3d3630;
+}
+
+.travel-block {
+  margin-bottom: 2rem;
+}
+
+.travel-block h2 {
+  font-size: 1.0625rem;
+  font-style: italic;
+  font-weight: 400;
+  margin-bottom: 0.75rem;
+}
+
+.travel-block p,
+.travel-block address {
+  font-family: system-ui, sans-serif;
+  font-size: 14px;
+  color: #5c534a;
+  line-height: 1.7;
+  font-style: normal;
+}
+
+.rsvp-block {
+  padding: 1.75rem 0;
+  border-top: 1px solid #8b3a3a;
+  margin-top: 2rem;
+}
+
+.rsvp-block h2 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  margin-bottom: 0.75rem;
+}
+
+.rsvp-block p {
+  font-family: system-ui, sans-serif;
+  font-size: 14px;
+  color: #5c534a;
+  margin-bottom: 1rem;
+}
+
+.rsvp-link {
+  font-family: system-ui, sans-serif;
+  font-size: 15px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 2rem;
+  font-family: system-ui, sans-serif;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.experience-contribute {
+  font-family: system-ui, sans-serif;
+  font-size: 14px;
+  color: #6b6560;
+  margin-top: 1rem;
+}
+
+.travel-note {
+  font-family: system-ui, sans-serif;
+  font-size: 14px;
+  color: #6b6560;
+  margin-top: 1rem;
+}
+
+.rsvp-email {
+  font-size: 14px;
+  color: #6b6560;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

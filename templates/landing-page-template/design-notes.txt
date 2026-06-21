@@ -1,0 +1,7 @@
+Relay — design notes
+
+Format: hardware product waitlist letter with numbered sections.
+Layout: single column, device figure, comparison table, FAQ.
+Typography: system sans body, mono serial label.
+Interaction: minimal top bar; form at waitlist section.
+Use for: product launches, pre-order pages, technical tools.
